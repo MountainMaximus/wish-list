@@ -1,0 +1,36 @@
+@import "../../scss/var.scss";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  width: 1320px;
+  @include breakpoint($hd-bp) {
+    width: 1140px;
+  }
+  @include breakpoint($laptop-bp) {
+    width: 960px;
+  }
+  @include breakpoint($tablet-bp) {
+    width: 740px;
+  }
+  @include breakpoint($tablet-mini-bp) {
+    width: 540px;
+  }
+  @include breakpoint($mobile-bp) {
+    width: 100%;
+  }
+}
+
+.content {
+  margin: $header-height 20px 0;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  align-items: center;
+}

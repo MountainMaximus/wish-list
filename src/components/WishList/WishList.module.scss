@@ -1,0 +1,136 @@
+@import "../../scss/var.scss";
+.root {
+  padding: 20px;
+  border: 2px solid $primary;
+  border-radius: 10px;
+  text-align: center;
+  width: 700px;
+  word-break: break-all;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    .search {
+      font-size: 1rem;
+      padding: 10px;
+      border: 1px solid $primary;
+      border-radius: 5px;
+
+      background: transparent;
+    }
+    .sort {
+      font-size: 1rem;
+
+      position: relative;
+      color: $primary;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      .list {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 100;
+
+        width: 300px;
+        background-color: $background;
+        border-radius: 10px;
+        li {
+          position: relative;
+          padding: 5px;
+          &::before {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            content: "";
+            height: 1px;
+            background-color: $primary;
+          }
+          &:last-child:before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+  .ListItem {
+    border: 1px solid $primary;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    cursor: grab;
+    &.disable {
+      cursor: default;
+      opacity: 0.5;
+      position: relative;
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        content: "";
+        height: 2px;
+        background-color: $lighten;
+      }
+    }
+    .content {
+      flex-grow: 1;
+      .title {
+        position: relative;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        font-style: italic;
+        &::before {
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          right: 0;
+          content: "";
+          height: 0.5px;
+          background-color: $primary;
+        }
+      }
+      .text {
+        font-size: 1rem;
+        padding: 5px;
+        text-align: left;
+      }
+    }
+    .edit {
+      display: flex;
+      column-gap: 15px;
+      padding: 10px;
+      align-items: center;
+      .ico {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+      }
+      .checkBox {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+      }
+    }
+  }
+  .footer {
+    cursor: pointer;
+
+    display: inline;
+    border: 2px solid $primary;
+    border-radius: 10px;
+    padding: 5px 50px 5px 5px;
+    position: relative;
+    .ico {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+    }
+  }
+}

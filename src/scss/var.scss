@@ -1,0 +1,24 @@
+$header-height: 60px;
+
+$hd-bp: 1400px;
+$laptop-bp: 1200px;
+$tablet-bp: 991px;
+$tablet-mini-bp: 767px;
+$mobile-bp: 575px;
+
+$primary: #373748;
+$lighten: darken(#9194a0, 15);
+
+$lite: #f1e7d9;
+$orange: #ffac2f;
+$background: #edf8f8;
+$blue: #d2f5f3;
+
+@mixin breakpoint($bp) {
+  @media screen and (max-width: $bp) {
+    @content;
+  }
+}
+
+@include breakpoint($tablet-bp) {
+}

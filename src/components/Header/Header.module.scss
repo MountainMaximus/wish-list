@@ -1,0 +1,36 @@
+@import "../../scss/var.scss";
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $primary;
+  color: $blue;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+  @include breakpoint($hd-bp) {
+    width: 1140px;
+  }
+  @include breakpoint($laptop-bp) {
+    width: 960px;
+  }
+  @include breakpoint($tablet-bp) {
+    width: 740px;
+  }
+  @include breakpoint($tablet-mini-bp) {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.header__left {
+  flex-grow: 1;
+}
